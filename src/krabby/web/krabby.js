@@ -299,15 +299,15 @@ function Krabby({ dormant = true } = {}) {
   // Scroll faster
   krabby.modes.modal.map('Command', ['Shift', 'KeyJ'], ({ repeat }) => krabby.scroll.pageDown(repeat), 'Scroll page down', 'Scroll faster')
   krabby.modes.modal.map('Command', ['Shift', 'KeyK'], ({ repeat }) => krabby.scroll.pageUp(repeat), 'Scroll page up', 'Scroll faster')
-  krabby.modes.modal.map('Command', ['KeyG'], ({ repeat }) => krabby.scroll.top(repeat), 'Scroll to the top of the page', 'Scroll faster')
-  krabby.modes.modal.map('Command', ['Shift', 'KeyG'], ({ repeat }) => krabby.scroll.bottom(repeat), 'Scroll to the bottom of the page', 'Scroll faster')
+  krabby.modes.modal.map('Command', ['KeyU'], ({ repeat }) => krabby.scroll.top(repeat), 'Scroll to the top of the page', 'Scroll faster')
+  krabby.modes.modal.map('Command', ['Shift', 'KeyU'], ({ repeat }) => krabby.scroll.bottom(repeat), 'Scroll to the bottom of the page', 'Scroll faster')
 
   // Navigation
   krabby.modes.modal.map('Command', ['Shift', 'KeyH'], () => history.back(), 'Go back in history', 'Navigation')
   krabby.modes.modal.map('Command', ['Shift', 'KeyL'], () => history.forward(), 'Go forward in history', 'Navigation')
-  krabby.modes.modal.map('Command', ['KeyU'], () => location.assign('..'), 'Go up in hierarchy', 'Navigation')
-  krabby.modes.modal.map('Command', ['Shift', 'KeyU'], () => location.assign('/'), 'Go to the home page', 'Navigation')
-  krabby.modes.modal.map('Command', ['Alt', 'KeyU'], () => location.assign('.'), 'Remove any URL parameter', 'Navigation')
+  krabby.modes.modal.map('Command', ['KeyF'], () => location.assign('..'), 'Go up in hierarchy', 'Navigation')
+  krabby.modes.modal.map('Command', ['Shift', 'KeyF'], () => location.assign('/'), 'Go to the home page', 'Navigation')
+  krabby.modes.modal.map('Command', ['Alt', 'KeyF'], () => location.assign('.'), 'Remove any URL parameter', 'Navigation')
 
   // Marks
   krabby.modes.modal.map('Command', ['Shift', 'Quote'], () => krabby.mark.push(), 'Push mark', 'Marks')
@@ -320,11 +320,11 @@ function Krabby({ dormant = true } = {}) {
   krabby.modes.modal.map('Command', ['Shift', 'KeyR'], () => location.reload(true), 'Reload the page, ignoring cached content', 'Refresh tabs')
 
   // Link hints
-  krabby.modes.modal.map('Command', ['KeyF'], () => krabby.modes.hint({ selections: krabby.selections, selectors: krabby.settings['hint-selectors'], style: krabby.settings['hint-style'] }).start(), 'Focus link', 'Link hints')
-  krabby.modes.modal.map('Command', ['Shift', 'KeyF'], () => krabby.modes.hint({ selections: krabby.selections, selectors: krabby.settings['hint-selectors'], lock: true, style: krabby.settings['hint-style'] }).start(), 'Select multiple links', 'Link hints')
-  krabby.modes.modal.map('Command', ['KeyC'], () => krabby.modes.hint({ selectors: krabby.settings['hint-selectors'], click: true, style: krabby.settings['hint-style'] }).start(), 'Click link', 'Link hints')
-  krabby.modes.modal.map('Command', ['Shift', 'KeyC'], () => krabby.modes.hint({ selectors: krabby.settings['hint-selectors'], lock: true, click: true, style: krabby.settings['hint-style'] }).start(), 'Click multiple links', 'Link hints')
-  krabby.modes.modal.map('Command', ['KeyI'], () => krabby.modes.hint({ selectors: krabby.settings['hint-text-selectors'], style: krabby.settings['hint-style'] }).start(), 'Focus input', 'Link hints')
+  krabby.modes.modal.map('Command', ['KeyY'], () => krabby.modes.hint({ selections: krabby.selections, selectors: krabby.settings['hint-selectors'], style: krabby.settings['hint-style'] }).start(), 'Focus link', 'Link hints')
+  krabby.modes.modal.map('Command', ['Shift', 'KeyY'], () => krabby.modes.hint({ selections: krabby.selections, selectors: krabby.settings['hint-selectors'], lock: true, style: krabby.settings['hint-style'] }).start(), 'Select multiple links', 'Link hints')
+  krabby.modes.modal.map('Command', ['KeyI'], () => krabby.modes.hint({ selectors: krabby.settings['hint-selectors'], click: true, style: krabby.settings['hint-style'] }).start(), 'Click link', 'Link hints')
+  krabby.modes.modal.map('Command', ['Shift', 'KeyI'], () => krabby.modes.hint({ selectors: krabby.settings['hint-selectors'], lock: true, click: true, style: krabby.settings['hint-style'] }).start(), 'Click multiple links', 'Link hints')
+  krabby.modes.modal.map('Command', ['KeyG'], () => krabby.modes.hint({ selectors: krabby.settings['hint-text-selectors'], style: krabby.settings['hint-style'] }).start(), 'Focus input', 'Link hints')
   krabby.modes.modal.map('Command', ['KeyV'], () => krabby.modes.hint({ selectors: krabby.settings['hint-video-selectors'], style: krabby.settings['hint-style'] }).start(), 'Focus video', 'Link hints')
 
   // Open links
@@ -349,8 +349,8 @@ function Krabby({ dormant = true } = {}) {
   krabby.modes.modal.map('Command', ['Control', 'Space'], () => krabby.selections.focus(), 'Focus main selection', 'Selection manipulation')
   krabby.modes.modal.map('Command', ['Alt', 'Space'], () => krabby.selections.remove(krabby.selections.mainSelection), 'Remove main selection', 'Selection manipulation')
   krabby.modes.modal.map('Command', ['Alt', 'KeyA'], () => krabby.selections.parent(), 'Select parent elements', 'Selection manipulation')
-  krabby.modes.modal.map('Command', ['Alt', 'KeyI'], () => krabby.selections.children(), 'Select child elements', 'Selection manipulation')
-  krabby.modes.modal.map('Command', ['Alt', 'Shift', 'KeyI'], () => krabby.selections.select('a'), 'Select links', 'Selection manipulation')
+  krabby.modes.modal.map('Command', ['Alt', 'KeyG'], () => krabby.selections.children(), 'Select child elements', 'Selection manipulation')
+  krabby.modes.modal.map('Command', ['Alt', 'Shift', 'KeyG'], () => krabby.selections.select('a'), 'Select links', 'Selection manipulation')
   krabby.modes.modal.map('Command', ['Alt', 'Shift', 'Digit0'], () => krabby.selections.nextSibling(), 'Select next sibling elements', 'Selection manipulation')
   krabby.modes.modal.map('Command', ['Alt', 'Shift', 'Digit9'], () => krabby.selections.previousSibling(), 'Select previous sibling elements', 'Selection manipulation')
   krabby.modes.modal.map('Command', ['BracketLeft'], () => krabby.selections.firstChild(), 'Select first child elements', 'Selection manipulation')
@@ -372,29 +372,29 @@ function Krabby({ dormant = true } = {}) {
   krabby.modes.pass.map('Page', ['Alt', 'Escape'], krabby.modes.modal, 'Stop passing keys to the page', 'Pass keys')
 
   // Clipboard
-  krabby.modes.modal.map('Document', ['KeyY'], () => krabby.commands.copyToClipboard(location.href, 'Page address copied'), 'Copy page address', 'Clipboard')
-  krabby.modes.modal.map('Document', ['Alt', 'KeyY'], () => krabby.commands.copyToClipboard(document.title, 'Page title copied'), 'Copy page title', 'Clipboard')
-  krabby.modes.modal.map('Document', ['Shift', 'KeyY'], () => krabby.commands.copyToClipboard(`[${document.title}](${location.href})`, 'Page address and title copied'), 'Copy page address and title', 'Clipboard')
-  krabby.modes.modal.map('Command', ['KeyY'], () => krabby.commands.yank(krabby.selections, (selection) => selection.outerHTML, 'HTML selection copied'), 'Copy HTML selection', 'Clipboard')
-  krabby.modes.modal.map('Command', ['Alt', 'KeyY'], () => krabby.commands.yank(krabby.selections, (selection) => selection.textContent, 'Selection copied as plain text'), 'Copy as plain text', 'Clipboard')
-  krabby.modes.modal.map('Command', ['Shift', 'KeyY'], () => krabby.commands.yankFilteredHTML(krabby.selections, krabby.settings['html-filter']), 'Copy selection, using an HTML filter', 'Clipboard')
-  krabby.modes.modal.map('Link', ['KeyY'], () => krabby.commands.yank(krabby.selections, (selection) => selection.href, 'Link address copied'), 'Copy link address', 'Clipboard')
-  krabby.modes.modal.map('Link', ['Alt', 'KeyY'], () => krabby.commands.yank(krabby.selections, (selection) => selection.textContent, 'Link text copied'), 'Copy link text', 'Clipboard')
-  krabby.modes.modal.map('Link', ['Shift', 'KeyY'], () => krabby.commands.yank(krabby.selections, (selection) => `[${selection.textContent}](${selection.href})`, 'Link address and text copied'), 'Copy link address and text', 'Clipboard')
-  krabby.modes.modal.map('Image', ['KeyY'], () => krabby.commands.yank(krabby.selections, (selection) => selection.src, 'Image address copied'), 'Copy image address', 'Clipboard')
-  krabby.modes.modal.map('Image', ['Alt', 'KeyY'], () => krabby.commands.yank(krabby.selections, (selection) => selection.alt, 'Image description copied'), 'Copy image description', 'Clipboard')
-  krabby.modes.modal.map('Image', ['Shift', 'KeyY'], () => krabby.commands.yank(krabby.selections, (selection) => `[${selection.alt}](${selection.src})`, 'Image address and description copied'), 'Copy image address and description', 'Clipboard')
+  krabby.modes.modal.map('Document', ['KeyT'], () => krabby.commands.copyToClipboard(location.href, 'Page address copied'), 'Copy page address', 'Clipboard')
+  krabby.modes.modal.map('Document', ['Alt', 'KeyT'], () => krabby.commands.copyToClipboard(document.title, 'Page title copied'), 'Copy page title', 'Clipboard')
+  krabby.modes.modal.map('Document', ['Shift', 'KeyT'], () => krabby.commands.copyToClipboard(`[${document.title}](${location.href})`, 'Page address and title copied'), 'Copy page address and title', 'Clipboard')
+  krabby.modes.modal.map('Command', ['KeyT'], () => krabby.commands.yank(krabby.selections, (selection) => selection.outerHTML, 'HTML selection copied'), 'Copy HTML selection', 'Clipboard')
+  krabby.modes.modal.map('Command', ['Alt', 'KeyT'], () => krabby.commands.yank(krabby.selections, (selection) => selection.textContent, 'Selection copied as plain text'), 'Copy as plain text', 'Clipboard')
+  krabby.modes.modal.map('Command', ['Shift', 'KeyT'], () => krabby.commands.yankFilteredHTML(krabby.selections, krabby.settings['html-filter']), 'Copy selection, using an HTML filter', 'Clipboard')
+  krabby.modes.modal.map('Link', ['KeyT'], () => krabby.commands.yank(krabby.selections, (selection) => selection.href, 'Link address copied'), 'Copy link address', 'Clipboard')
+  krabby.modes.modal.map('Link', ['Alt', 'KeyT'], () => krabby.commands.yank(krabby.selections, (selection) => selection.textContent, 'Link text copied'), 'Copy link text', 'Clipboard')
+  krabby.modes.modal.map('Link', ['Shift', 'KeyT'], () => krabby.commands.yank(krabby.selections, (selection) => `[${selection.textContent}](${selection.href})`, 'Link address and text copied'), 'Copy link address and text', 'Clipboard')
+  krabby.modes.modal.map('Image', ['KeyT'], () => krabby.commands.yank(krabby.selections, (selection) => selection.src, 'Image address copied'), 'Copy image address', 'Clipboard')
+  krabby.modes.modal.map('Image', ['Alt', 'KeyT'], () => krabby.commands.yank(krabby.selections, (selection) => selection.alt, 'Image description copied'), 'Copy image description', 'Clipboard')
+  krabby.modes.modal.map('Image', ['Shift', 'KeyT'], () => krabby.commands.yank(krabby.selections, (selection) => `[${selection.alt}](${selection.src})`, 'Image address and description copied'), 'Copy image address and description', 'Clipboard')
 
   // Player
   krabby.modes.modal.map('Video', ['Space'], () => krabby.commands.player().pause(), 'Pause video', 'Player')
   krabby.modes.modal.map('Video', ['KeyM'], () => krabby.commands.player().mute(), 'Mute video', 'Player')
   krabby.modes.modal.map('Video', ['KeyL'], () => krabby.commands.player().seekRelative(5), 'Seek forward 5 seconds', 'Player')
   krabby.modes.modal.map('Video', ['KeyH'], () => krabby.commands.player().seekRelative(-5), 'Seek backward 5 seconds', 'Player')
-  krabby.modes.modal.map('Video', ['KeyG'], () => krabby.commands.player().seekAbsolutePercent(0), 'Seek to the beginning', 'Player')
-  krabby.modes.modal.map('Video', ['Shift', 'KeyG'], () => krabby.commands.player().seekAbsolutePercent(1), 'Seek to the end', 'Player')
+  krabby.modes.modal.map('Video', ['KeyU'], () => krabby.commands.player().seekAbsolutePercent(0), 'Seek to the beginning', 'Player')
+  krabby.modes.modal.map('Video', ['Shift', 'KeyU'], () => krabby.commands.player().seekAbsolutePercent(1), 'Seek to the end', 'Player')
   krabby.modes.modal.map('Video', ['KeyK'], () => krabby.commands.player().increaseVolume(0.1), 'Increase volume', 'Player')
   krabby.modes.modal.map('Video', ['KeyJ'], () => krabby.commands.player().decreaseVolume(0.1), 'Decrease volume', 'Player')
-  krabby.modes.modal.map('Video', ['KeyF'], () => krabby.commands.player().fullscreen(), 'Toggle full-screen mode', 'Player')
+  krabby.modes.modal.map('Video', ['KeyY'], () => krabby.commands.player().fullscreen(), 'Toggle full-screen mode', 'Player')
   krabby.modes.modal.map('Video', ['KeyP'], () => krabby.commands.player().pictureInPicture(), 'Toggle picture-in-picture mode', 'Player')
 
   // mpv

@@ -256,3 +256,13 @@ make install [static=no] [extensions=yes] [interactive=yes]
 [Regular Expressions]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
 
 [Create a keyboard interface to the web]: https://alexherbo2.github.io/blog/chrome/create-a-keyboard-interface-to-the-web/
+
+# Hacked keymaping to align with Dvorak layout
+Did the following transformations in krabby.js
+KeyT -- not present
+replace-string KeyY to KeyT
+replace-string KeyF to KeyY
+replace-string KeyU to keyF
+replace-string KeyG to KeyU
+replace-string KeyI to KeyG
+replace-string KeyC to KeyI
